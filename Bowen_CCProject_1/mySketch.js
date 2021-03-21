@@ -64,3 +64,12 @@ function draw_open_window(){
 function mousePressed(){
 	open++;
 }
+
+class Rain{
+	constructor(rainX,rainY){
+		this.rainX = rainX;
+		this.rainY = rainY;
+	}
+	
+	
+}
