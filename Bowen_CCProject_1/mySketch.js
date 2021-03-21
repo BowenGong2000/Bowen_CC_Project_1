@@ -2,7 +2,7 @@
 // Bowen Gong bg1941
 
 //Global variables
-var open = 1;                  //variable control window to open and close
+var open = 1;                  //variable that control window to open and close
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
