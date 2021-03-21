@@ -6,14 +6,25 @@ var length = 10;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	background('#FFFFFF');  //black #000000
+	background('#000000');  //black #000000
 	rectMode(CENTER);
-	fill('#191970');
+	fill('#191970');        //night blue 
 	rect(windowWidth/2, windowHeight/2,650,650)
 
 }
 
 function draw() {
+	//draw_open_window();
+	//background('#000000');
+	fill('#191970');        //night blue 
+	rect(windowWidth/2, windowHeight/2,650,650)
+	rectMode(CENTER);
+	rect(600,210,250,270);
+	rect(600,500,250,270);
+	
+}
+
+function draw_open_window(){
 	//left window 
 	fill('#000000')
 	quad(443,50,463,80,463,630,443,660); //left bar
@@ -35,4 +46,3 @@ function draw() {
 	quad(windowWidth-535,620,windowWidth-463,660,windowWidth-463,630,windowWidth-515,600); //bottom bar 
 	rect(windowWidth-530,330,80,15); //middle bar
 }
-
