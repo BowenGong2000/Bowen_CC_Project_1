@@ -7,7 +7,7 @@ class Rain{
 	
 	drop(){
 		this.y = this.y + this.drop_speed;
-		if(this.y > windowHeight){
+		if(this.y > windowHeight){   //reset the rain drop to top 
 			this.y = random(0,100);
 		}
 	}
