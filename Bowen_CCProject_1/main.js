@@ -3,10 +3,14 @@
 
 //Global variables
 var open = 1;                  //variable that control window to open and close
+var rains = [];
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	background('#000000');  //black #000000
+	background('#000000');
+	for (var i=0;i<300;i++){
+		rains[i] = new Rain();
+	}
 }
 
 function draw() {
@@ -16,16 +20,20 @@ function draw() {
 	else{  //odd number, close window
 		draw_close_window();
 	}
-
+	for (var i=0;i<rains.length;i++){
+    rains[i].drop();
+    rains[i].display();
+	}
 }
 
 function draw_close_window(){
 	background('#000000');
 	rectMode(CENTER);
+	strokeWeight(1);
+	stroke('#191970');
 	noFill();
 	rect(windowWidth/2,windowHeight/2,650,650,3);
 	fill('#191970');
-	
 	rect(605,210,250,270,3);
 	rect(605,505,250,270,3);
 	rect(925,210,250,270,3);
@@ -35,6 +43,7 @@ function draw_close_window(){
 }
 
 function draw_open_window(){
+	background('#000000');
 	noStroke();
 	rectMode(CENTER);
 	fill('#191970');        //night blue 
@@ -49,7 +58,6 @@ function draw_open_window(){
 	rect(443,630,20,30);
 	quad(535,620,463,660,463,630,515,600); //bottom bar 
 	rect(450,330,80,15); //middle bar
-	
 	//right window
 	quad(windowWidth-443,50,windowWidth-463,80,windowWidth-463,630,windowWidth-443,660); //left bar
 	rectMode(CORNER);
@@ -63,13 +71,4 @@ function draw_open_window(){
 
 function mousePressed(){
 	open++;
-}
-
-class Rain{
-	constructor(rainX,rainY){
-		this.rainX = rainX;
-		this.rainY = rainY;
-	}
-	
-	
 }
