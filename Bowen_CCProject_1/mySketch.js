@@ -2,29 +2,43 @@
 // Bowen Gong bg1941
 
 //Global variables
-var length = 10;
+var open = 1;                  //variable control window to open and close
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background('#000000');  //black #000000
-	rectMode(CENTER);
-	fill('#191970');        //night blue 
-	rect(windowWidth/2, windowHeight/2,650,650)
-
 }
 
 function draw() {
-	//draw_open_window();
-	//background('#000000');
-	fill('#191970');        //night blue 
-	rect(windowWidth/2, windowHeight/2,650,650)
+	if (open%2 == 0){  //even number, open window     
+		draw_open_window();
+	}
+	else{  //odd number, close window
+		draw_close_window();
+	}
+
+}
+
+function draw_close_window(){
+	background('#000000');
 	rectMode(CENTER);
-	rect(600,210,250,270);
-	rect(600,500,250,270);
+	noFill();
+	rect(windowWidth/2,windowHeight/2,650,650,3);
+	fill('#191970');
 	
+	rect(605,210,250,270,3);
+	rect(605,505,250,270,3);
+	rect(925,210,250,270,3);
+	rect(925,505,250,270,3);
+	stroke('#191970');
+	line(765,35,765,680);
 }
 
 function draw_open_window(){
+	noStroke();
+	rectMode(CENTER);
+	fill('#191970');        //night blue 
+	rect(windowWidth/2, windowHeight/2,650,650)
 	//left window 
 	fill('#000000')
 	quad(443,50,463,80,463,630,443,660); //left bar
@@ -45,4 +59,8 @@ function draw_open_window(){
 	rect(windowWidth-463,630,20,30);
 	quad(windowWidth-535,620,windowWidth-463,660,windowWidth-463,630,windowWidth-515,600); //bottom bar 
 	rect(windowWidth-530,330,80,15); //middle bar
+}
+
+function mousePressed(){
+	open++;
 }
