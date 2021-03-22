@@ -30,40 +30,55 @@ function draw() {
 	}
 	if (open%2 == 0){  //even number, open window     
 		draw_open_window()
-		setTimeout(lightning,3000);  // wait 3s to lauch the lightning
+		setTimeout(lightning,4000);  // wait 4s to lauch the lightning
 	}
 	else{  //odd number, close window
 		draw_close_window();
 	}
-	draw_mountain();
+
 }//end of draw
 
 
 function draw_close_window(){
 	background('black');
-		rectMode(CENTER);
-		fill('#191970');
-		noStroke();
-		rect(windowWidth/2,windowHeight/2,650,650,3); 
-			//// rain ////
-		for (var i=0;i<rains.length;i++){
-   		rains[i].drop();
-    	rains[i].display();
-		}
-		rectMode(CORNER);
-		noStroke();
-		fill('#000000');
-		rect(442,32,35,650,3); 
-		rect(442,32,650,40,3);
-		rect(442,645,650,40,3);
-		rect(1055,32,40,650,3);
-		rectMode(CENTER);
-		rect(windowWidth/2,windowHeight/2,600,25);
-		rect(windowWidth/2,windowHeight/2,60,600);
-		noFill();
-		stroke('#191970');
-		line(windowWidth/2,35,windowWidth/2,678);
-		rect(windowWidth/2,windowHeight/2,650,650,3);
+	rectMode(CENTER);
+	fill('#191970');
+	noStroke();
+	rect(windowWidth/2,windowHeight/2,650,650,3); 
+	//// moon ////
+	fill('#999900');
+	circle(950,150,80);
+	//// moutain ////
+	var color1 = color(105,105,105); 
+	var color3 = color(119,136,153);
+	var color2 = color(128,128,128);
+	draw_mountain(color1);
+	push();
+	translate(0, 15);
+	draw_mountain(color2);
+	translate(0,22);
+	draw_mountain(color3);
+	pop()
+	//// rain ////
+	for (var i=0;i<rains.length;i++){
+   	rains[i].drop();
+    rains[i].display();
+	}
+	//// window ////
+	rectMode(CORNER);
+	noStroke();
+	fill('#000000');
+	rect(442,32,35,650,3); 
+	rect(442,32,650,40,3);
+	rect(442,645,650,40,3);
+	rect(1055,32,40,650,3);
+	rectMode(CENTER);
+	rect(windowWidth/2,windowHeight/2,600,25);
+	rect(windowWidth/2,windowHeight/2,60,600);
+	noFill();
+	stroke('#191970');
+	line(windowWidth/2,35,windowWidth/2,678);
+	rect(windowWidth/2,windowHeight/2,650,650,3);
 }// end of draw_close_window()
 
 
@@ -73,14 +88,25 @@ function draw_open_window(){
 	rectMode(CENTER);
 	fill('#191970');        //night blue 
 	rect(windowWidth/2, windowHeight/2,650,650)
-	//draw_mountain();
-
+	//// moon ////
+	fill('#999900');
+	circle(950,150,80);
+	//// mountain ////
+	var color1 = color(105,105,105); 
+	var color3 = color(119,136,153);
+	var color2 = color(128,128,128);
+	draw_mountain(color1);
+	push();
+	translate(0, 15);
+	draw_mountain(color2);
+	translate(0,22);
+	draw_mountain(color3);
+	pop()
 	//// rain ////
 	for (var i=0;i<rains.length;i++){
     rains[i].drop();
     rains[i].display();
 	}
-	
 	//// window ////
 	noStroke();
 	//left window 
