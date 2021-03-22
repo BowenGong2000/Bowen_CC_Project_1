@@ -1,0 +1,35 @@
+function draw_mountain(){
+	noStroke();
+	fill('#696969');   //#696969 rgb(105,105,105)
+	beginShape();
+	vertex(445,150);
+	vertex(475,180);
+	vertex(495,175);
+	vertex(505,165);
+	vertex(525,140);
+	vertex(545,130);
+	vertex(595,150);
+	vertex(611,165);
+	vertex(630,169);
+	vertex(641,175);
+	vertex(652,190);
+	vertex(666,200);
+	vertex(686,200);
+	vertex(696,205);
+	vertex(713,237);
+	vertex(725,248);
+	vertex(834,293);
+	vertex(854,316);
+	vertex(864,320);
+	vertex(876,319);
+	vertex(896,319);
+	vertex(904,321);
+	vertex(940,335);
+	vertex(975,341);
+	vertex(1090,350);
+	vertex(1090,365);
+	vertex(575,365);
+	vertex(445,365);
+	vertex(445,150);
+	endShape();
+}

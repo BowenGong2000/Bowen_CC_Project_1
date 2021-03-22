@@ -28,15 +28,14 @@ function draw() {
 		g=0;
 		b=0;
 	}
-	
 	if (open%2 == 0){  //even number, open window     
 		draw_open_window()
-		setTimeout(lightning,3000);
-		//draw_open_window();
+		setTimeout(lightning,3000);  // wait 3s to lauch the lightning
 	}
 	else{  //odd number, close window
 		draw_close_window();
 	}
+	draw_mountain();
 }//end of draw
 
 
@@ -74,6 +73,8 @@ function draw_open_window(){
 	rectMode(CENTER);
 	fill('#191970');        //night blue 
 	rect(windowWidth/2, windowHeight/2,650,650)
+	//draw_mountain();
+
 	//// rain ////
 	for (var i=0;i<rains.length;i++){
     rains[i].drop();

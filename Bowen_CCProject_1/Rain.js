@@ -13,9 +13,9 @@ class Rain{
 		}
 	}
 	display(){
-		var thickness = map(this.z,0,20,1,4);
+		var thickness = map(this.z,0,20,0.5,3);
 		strokeWeight(thickness);
-		stroke('#B0E0E6');  //;light blue
+		stroke('#5F9EA0');  //;light blue
 		line(this.x,this.y,this.x,this.y+15);
 	}
 }
