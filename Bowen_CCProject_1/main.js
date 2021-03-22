@@ -5,6 +5,7 @@
 var open = 1;                  //variable that control window to open and close
 var rains = [];                //array that stores numbers of rain drops
 var r,g,b;
+//var stop = false;               //variable that controls the launch of the lightning
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -29,8 +30,9 @@ function draw() {
 	}
 	
 	if (open%2 == 0){  //even number, open window     
-		draw_open_window();
-		lightning();
+		draw_open_window()
+		setTimeout(lightning,3000);
+		//draw_open_window();
 	}
 	else{  //odd number, close window
 		draw_close_window();
@@ -103,9 +105,11 @@ function draw_open_window(){
 
 
 function lightning(){
+	//if(!stop){
 		fill(r,g,b,63);
 		rectMode(CENTER);
 		rect(windowWidth/2,windowHeight/2,650,650)
+	//}
 }
 
 function mousePressed(){
