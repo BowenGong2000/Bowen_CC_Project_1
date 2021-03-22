@@ -3,15 +3,15 @@
 
 //Global variables
 var open = 1;                  //variable that control window to open and close
-var rains = [];
+var rains = [];                //array that stores numbers of rain drops
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background('#000000');
-	for (var i=0;i<300;i++){
+	for (var i=0;i<200;i++){
 		rains[i] = new Rain();
-	}
-}
+	} 
+} 
 
 function draw() {
 	if (open%2 == 0){  //even number, open window     
@@ -20,26 +20,33 @@ function draw() {
 	else{  //odd number, close window
 		draw_close_window();
 	}
-	for (var i=0;i<rains.length;i++){
-    rains[i].drop();
-    rains[i].display();
-	}
 }
 
 function draw_close_window(){
-	background('#000000');
-	rectMode(CENTER);
-	strokeWeight(1);
-	stroke('#191970');
-	noFill();
-	rect(windowWidth/2,windowHeight/2,650,650,3);
-	fill('#191970');
-	rect(605,210,250,270,3);
-	rect(605,505,250,270,3);
-	rect(925,210,250,270,3);
-	rect(925,505,250,270,3);
-	stroke('#191970');
-	line(765,35,765,680);
+	background('black');
+		rectMode(CENTER);
+		fill('#191970');
+		noStroke();
+		rect(windowWidth/2,windowHeight/2,650,650,3); 
+			////rain////
+		for (var i=0;i<rains.length;i++){
+   		rains[i].drop();
+    	rains[i].display();
+		}
+		rectMode(CORNER);
+		noStroke();
+		fill('#000000');
+		rect(442,32,35,650,3); 
+		rect(442,32,650,40,3);
+		rect(442,645,650,40,3);
+		rect(1055,32,40,650,3);
+		rectMode(CENTER);
+		rect(windowWidth/2,windowHeight/2,600,25);
+		rect(windowWidth/2,windowHeight/2,60,600);
+		noFill();
+		stroke('#191970');
+		line(windowWidth/2,35,windowWidth/2,678);
+		rect(windowWidth/2,windowHeight/2,650,650,3);
 }
 
 function draw_open_window(){
@@ -48,6 +55,12 @@ function draw_open_window(){
 	rectMode(CENTER);
 	fill('#191970');        //night blue 
 	rect(windowWidth/2, windowHeight/2,650,650)
+	////rain////
+	for (var i=0;i<rains.length;i++){
+    rains[i].drop();
+    rains[i].display();
+	}
+	noStroke();
 	//left window 
 	fill('#000000')
 	quad(443,50,463,80,463,630,443,660); //left bar
