@@ -4,23 +4,39 @@
 //Global variables
 var open = 1;                  //variable that control window to open and close
 var rains = [];                //array that stores numbers of rain drops
+var r,g,b;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background('#000000');
-	for (var i=0;i<200;i++){
+	for (var i=0;i<250;i++){
 		rains[i] = new Rain();
 	} 
 } 
 
+
 function draw() {
+	var flash = int(random(1,3));  //variable used to switch between black and white, create a lighntning like effect
+	if (flash == 1){
+		r=255;
+		g=255;
+		b=255;
+	}
+	else{
+		r=0;
+		g=0;
+		b=0;
+	}
+	
 	if (open%2 == 0){  //even number, open window     
 		draw_open_window();
+		lightning();
 	}
 	else{  //odd number, close window
 		draw_close_window();
 	}
-}
+}//end of draw
+
 
 function draw_close_window(){
 	background('black');
@@ -28,7 +44,7 @@ function draw_close_window(){
 		fill('#191970');
 		noStroke();
 		rect(windowWidth/2,windowHeight/2,650,650,3); 
-			////rain////
+			//// rain ////
 		for (var i=0;i<rains.length;i++){
    		rains[i].drop();
     	rains[i].display();
@@ -47,7 +63,8 @@ function draw_close_window(){
 		stroke('#191970');
 		line(windowWidth/2,35,windowWidth/2,678);
 		rect(windowWidth/2,windowHeight/2,650,650,3);
-}
+}// end of draw_close_window()
+
 
 function draw_open_window(){
 	background('#000000');
@@ -55,11 +72,13 @@ function draw_open_window(){
 	rectMode(CENTER);
 	fill('#191970');        //night blue 
 	rect(windowWidth/2, windowHeight/2,650,650)
-	////rain////
+	//// rain ////
 	for (var i=0;i<rains.length;i++){
     rains[i].drop();
     rains[i].display();
 	}
+	
+	//// window ////
 	noStroke();
 	//left window 
 	fill('#000000')
@@ -80,6 +99,13 @@ function draw_open_window(){
 	rect(windowWidth-463,630,20,30);
 	quad(windowWidth-535,620,windowWidth-463,660,windowWidth-463,630,windowWidth-515,600); //bottom bar 
 	rect(windowWidth-530,330,80,15); //middle bar
+}// end of draw_open_window()
+
+
+function lightning(){
+		fill(r,g,b,63);
+		rectMode(CENTER);
+		rect(windowWidth/2,windowHeight/2,650,650)
 }
 
 function mousePressed(){

@@ -1,8 +1,9 @@
 class Rain{
 	constructor(){
-		this.x = random(windowWidth/2-325,windowWidth/2+323);
+		this.x = random(windowWidth/2-322,windowWidth/2+323);
 		this.y = random(35,100);
 		this.drop_speed = random(10,18);
+		this.z = random(0,20);     //used to control the rain thickness, so rain drop far away will look thinner and rain drop coser will look thicker
 	}
 	
 	drop(){
@@ -11,10 +12,10 @@ class Rain{
 			this.y = random(35,100);
 		}
 	}
-	
 	display(){
-		strokeWeight(2);
-		stroke('#B0E0E6');  //;ight blue
+		var thickness = map(this.z,0,20,1,4);
+		strokeWeight(thickness);
+		stroke('#B0E0E6');  //;light blue
 		line(this.x,this.y,this.x,this.y+15);
 	}
 }
