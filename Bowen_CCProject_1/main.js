@@ -58,7 +58,11 @@ function draw_close_window(){
 	draw_mountain(color2);
 	translate(0,22);
 	draw_mountain(color3);
-	pop()
+	pop();
+	//// land ////
+	fill('#423324');
+	rect(768,537,649,290);
+	
 	//// rain ////
 	for (var i=0;i<rains.length;i++){
    	rains[i].drop();
@@ -102,6 +106,9 @@ function draw_open_window(){
 	translate(0,22);
 	draw_mountain(color3);
 	pop()
+	//// land ////
+	fill('#423324');
+	rect(768,537,649,290);
 	//// rain ////
 	for (var i=0;i<rains.length;i++){
     rains[i].drop();
@@ -138,6 +145,7 @@ function lightning(){
 		rect(windowWidth/2,windowHeight/2,650,650)
 	//}
 }
+
 
 function mousePressed(){
 	open++;
