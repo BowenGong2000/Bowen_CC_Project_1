@@ -1,6 +1,6 @@
 class Rain{
 	constructor(){
-		this.x = random(windowWidth/2-322,windowWidth/2+323);
+		this.x = random(windowwidth/2-322,windowwidth/2+323);
 		this.y = random(30,100);
 		this.drop_speed = random(10,18);
 		this.z = random(0,20);     //used to control the rain thickness, so rain drop far away will look thinner and rain drop coser will look thicker

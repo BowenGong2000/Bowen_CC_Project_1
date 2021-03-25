@@ -1,6 +1,6 @@
 class Movingobj{
 	constructor(){
-		this.x = windowWidth/2;
+		this.x = windowwidth/2;
 		this.y = 400;
 		this.yspeed = 0.1
 		this.sizeX = 10;
@@ -48,12 +48,12 @@ class Movingobj{
 		circle(this.x+60,this.y-40,20);
 		rectMode('CENTER');
 		fill(255, 215, 0); 
-		rect(windowWidth/2,this.y,160,30 );
+		rect(windowwidth/2,this.y,160,30 );
 
 		fill('#B22222');
-		circle(windowWidth/2,this.y+50,90);
+		circle(windowwidth/2,this.y+50,90);
 		fill(255,215,0);
-		rect(windowWidth/2,this.y+15,160,40);
+		rect(windowwidth/2,this.y+15,160,40);
 	
 		}
 	}

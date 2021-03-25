@@ -1,7 +1,22 @@
 // CC Project 1
 // Bowen Gong bg1941
 
+
+//Instructions: 
+//- Click your mouse to control the open and close window.
+//- When window open, the lightning will be lauched in 4s, and will repeat randomly
+//- When the window is open the black object will start moving to you, 
+//wait until the object reach you, which is the end. 
+//- You can reset the object by reopen the window. 
+//- Pretent it is a ghost which will come to you as soon as you open your window,
+//and close your window will protect you.
+//- My adjective to illustrate is : unexpected.
+
+//- Bowen 
+
+
 //Global variables
+var windowwidth,windowheight
 var open = 1;                  //variable that control window to open and close
 var rains = [];                //array that stores numbers of rain drops
 var r,g,b;
@@ -10,8 +25,11 @@ var face;
 
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	//window.print(windowWidth,windowHeight);
+	createCanvas(1536,714);
 	background('#000000');
+	windowwidth = 1536;
+	windowheight = 714;
 	increment = 0;
 	sizeX = 6;
 	sizeY = 8;
@@ -49,9 +67,9 @@ function draw_close_window(){
 	rectMode(CENTER);
 	fill('#191970');
 	noStroke();
-	rect(windowWidth/2,windowHeight/2,650,650,3); 
+	rect(windowwidth/2,windowheight/2,650,650,3); 
 	fill(0,0,0,100);
-	rect(windowWidth/2,windowHeight/2,650,650,3); 
+	rect(windowwidth/2,windowheight/2,650,650,3); 
 	//// moon ////
 	fill('#999900');
 	circle(950,150,80);
@@ -87,15 +105,15 @@ function draw_close_window(){
 	rect(442,645,650,40,3);
 	rect(1055,32,40,650,3);
 	rectMode(CENTER);
-	rect(windowWidth/2,windowHeight/2,600,25);
-	rect(windowWidth/2,windowHeight/2,60,600);
+	rect(windowwidth/2,windowheight/2,600,25);
+	rect(windowwidth/2,windowheight/2,60,600);
 	noFill();
 	stroke('#191970');
-	line(windowWidth/2,35,windowWidth/2,678);
-	rect(windowWidth/2,windowHeight/2,650,650,3);
+	line(windowwidth/2,35,windowwidth/2,678);
+	rect(windowwidth/2,windowheight/2,650,650,3);
 	face.reset();
 	fill(0,0,0,100);
-	rect(windowWidth/2,windowHeight/2,650,650,3); 
+	rect(windowwidth/2,windowheight/2,650,650,3); 
 }// end of draw_close_window()
 
 
@@ -104,7 +122,7 @@ function draw_open_window(){
 	noStroke();
 	rectMode(CENTER);
 	fill('#191970');        //night blue 
-	rect(windowWidth/2, windowHeight/2,650,650)
+	rect(windowwidth/2, windowheight/2,650,650)
 	//// moon ////
 	fill('#999900');
 	circle(950,150,80);
@@ -136,7 +154,7 @@ function draw_open_window(){
 	face.stop();
 	face.draw_face();
 	fill(0,0,0,100);
-	rect(windowWidth/2,windowHeight/2,650,650,3); 
+	rect(windowwidth/2,windowheight/2,650,650,3); 
 	//// window ////
 	noStroke();
 	//left window 
@@ -150,14 +168,14 @@ function draw_open_window(){
 	quad(535,620,463,660,463,630,515,600); //bottom bar 
 	rect(450,330,80,15); //middle bar
 	//right window
-	quad(windowWidth-443,50,windowWidth-463,80,windowWidth-463,630,windowWidth-443,660); //left bar
+	quad(windowwidth-443,50,windowwidth-463,80,windowwidth-463,630,windowwidth-443,660); //left bar
 	rectMode(CORNER);
-	rect(windowWidth-463,50,20,30);
-	quad(windowWidth-463,50,windowWidth-535,90,windowWidth-515,100,windowWidth-463,80); //top bar
-	quad(windowWidth-535,90,windowWidth-535,620,windowWidth-515,600,windowWidth-515,100); //right bar
-	rect(windowWidth-463,630,20,30);
-	quad(windowWidth-535,620,windowWidth-463,660,windowWidth-463,630,windowWidth-515,600); //bottom bar 
-	rect(windowWidth-530,330,80,15); //middle bar
+	rect(windowwidth-463,50,20,30);
+	quad(windowwidth-463,50,windowwidth-535,90,windowwidth-515,100,windowwidth-463,80); //top bar
+	quad(windowwidth-535,90,windowwidth-535,620,windowwidth-515,600,windowwidth-515,100); //right bar
+	rect(windowwidth-463,630,20,30);
+	quad(windowwidth-535,620,windowwidth-463,660,windowwidth-463,630,windowwidth-515,600); //bottom bar 
+	rect(windowwidth-530,330,80,15); //middle bar
 	rectMode(CENTER);
 	//fill(0,0,0,100);
 }// end of draw_open_window()
@@ -167,7 +185,7 @@ function lightning(){
 	//if(!stop){
 		fill(r,g,b,70);
 		rectMode(CENTER);
-		rect(windowWidth/2,windowHeight/2,650,650)
+		rect(windowwidth/2,windowheight/2,650,650)
 	//}
 }
 
