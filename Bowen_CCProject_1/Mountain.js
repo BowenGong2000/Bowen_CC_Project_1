@@ -1,6 +1,6 @@
-function draw_mountain(){
+function draw_mountain(color){
 	noStroke();
-	fill('#696969');   //#696969 rgb(105,105,105)
+	fill(color);   //#696969 rgb(105,105,105)
 	beginShape();
 	vertex(445,150);
 	vertex(475,180);
@@ -26,7 +26,7 @@ function draw_mountain(){
 	vertex(904,321);
 	vertex(940,335);
 	vertex(975,341);
-	vertex(1090,350);
+	vertex(1090,340);
 	vertex(1090,365);
 	vertex(575,365);
 	vertex(445,365);

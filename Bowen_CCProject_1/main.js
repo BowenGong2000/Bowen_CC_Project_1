@@ -5,11 +5,17 @@
 var open = 1;                  //variable that control window to open and close
 var rains = [];                //array that stores numbers of rain drops
 var r,g,b;
-//var stop = false;               //variable that controls the launch of the lightning
+//var stop = false;            //variable that controls the launch of the lightning
+var face;
+
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background('#000000');
+	increment = 0;
+	sizeX = 6;
+	sizeY = 8;
+	face = new Movingobj();
 	for (var i=0;i<250;i++){
 		rains[i] = new Rain();
 	} 
@@ -28,14 +34,14 @@ function draw() {
 		g=0;
 		b=0;
 	}
-	if (open%2 == 0){  //even number, open window     
-		draw_open_window()
+ 	if (open%2 == 0){  //even number, open window     
+		draw_open_window();
 		setTimeout(lightning,4000);  // wait 4s to lauch the lightning
 	}
 	else{  //odd number, close window
 		draw_close_window();
 	}
-
+	
 }//end of draw
 
 
@@ -62,7 +68,10 @@ function draw_close_window(){
 	//// land ////
 	fill('#423324');
 	rect(768,537,649,290);
-	
+		//// road ////
+	fill('#4D5656');
+	quad(745,393,792,393,880,560,655,560);
+	quad(848,500,1092,500,1092,560,880,560);
 	//// rain ////
 	for (var i=0;i<rains.length;i++){
    	rains[i].drop();
@@ -83,6 +92,7 @@ function draw_close_window(){
 	stroke('#191970');
 	line(windowWidth/2,35,windowWidth/2,678);
 	rect(windowWidth/2,windowHeight/2,650,650,3);
+	face.reset();
 }// end of draw_close_window()
 
 
@@ -109,11 +119,20 @@ function draw_open_window(){
 	//// land ////
 	fill('#423324');
 	rect(768,537,649,290);
+
+		//// road ////
+	fill('#4D5656');
+	quad(745,393,792,393,880,560,655,560);
+	quad(848,500,1092,500,1092,560,880,560);
 	//// rain ////
 	for (var i=0;i<rains.length;i++){
     rains[i].drop();
     rains[i].display();
 	}
+	face.move();
+	face.display();
+	face.stop();
+	
 	//// window ////
 	noStroke();
 	//left window 
@@ -135,6 +154,8 @@ function draw_open_window(){
 	rect(windowWidth-463,630,20,30);
 	quad(windowWidth-535,620,windowWidth-463,660,windowWidth-463,630,windowWidth-515,600); //bottom bar 
 	rect(windowWidth-530,330,80,15); //middle bar
+	
+	
 }// end of draw_open_window()
 
 
@@ -150,3 +171,5 @@ function lightning(){
 function mousePressed(){
 	open++;
 }
+
+
