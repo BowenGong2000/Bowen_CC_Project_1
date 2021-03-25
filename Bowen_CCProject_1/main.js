@@ -41,7 +41,6 @@ function draw() {
 	else{  //odd number, close window
 		draw_close_window();
 	}
-	
 }//end of draw
 
 
@@ -50,6 +49,8 @@ function draw_close_window(){
 	rectMode(CENTER);
 	fill('#191970');
 	noStroke();
+	rect(windowWidth/2,windowHeight/2,650,650,3); 
+	fill(0,0,0,100);
 	rect(windowWidth/2,windowHeight/2,650,650,3); 
 	//// moon ////
 	fill('#999900');
@@ -93,6 +94,8 @@ function draw_close_window(){
 	line(windowWidth/2,35,windowWidth/2,678);
 	rect(windowWidth/2,windowHeight/2,650,650,3);
 	face.reset();
+	fill(0,0,0,100);
+	rect(windowWidth/2,windowHeight/2,650,650,3); 
 }// end of draw_close_window()
 
 
@@ -119,8 +122,7 @@ function draw_open_window(){
 	//// land ////
 	fill('#423324');
 	rect(768,537,649,290);
-
-		//// road ////
+	//// road ////
 	fill('#4D5656');
 	quad(745,393,792,393,880,560,655,560);
 	quad(848,500,1092,500,1092,560,880,560);
@@ -132,7 +134,9 @@ function draw_open_window(){
 	face.move();
 	face.display();
 	face.stop();
-	
+	face.draw_face();
+	fill(0,0,0,100);
+	rect(windowWidth/2,windowHeight/2,650,650,3); 
 	//// window ////
 	noStroke();
 	//left window 
@@ -154,14 +158,14 @@ function draw_open_window(){
 	rect(windowWidth-463,630,20,30);
 	quad(windowWidth-535,620,windowWidth-463,660,windowWidth-463,630,windowWidth-515,600); //bottom bar 
 	rect(windowWidth-530,330,80,15); //middle bar
-	
-	
+	rectMode(CENTER);
+	//fill(0,0,0,100);
 }// end of draw_open_window()
 
 
 function lightning(){
 	//if(!stop){
-		fill(r,g,b,63);
+		fill(r,g,b,70);
 		rectMode(CENTER);
 		rect(windowWidth/2,windowHeight/2,650,650)
 	//}
