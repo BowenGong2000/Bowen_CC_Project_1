@@ -25,7 +25,7 @@ var face;
 
 
 function setup() {
-	//window.print(windowWidth,windowHeight);
+	window.print("Click mouse to control the window, wait and see what happen,close and reopen the window to reset the scene");
 	createCanvas(1536,714);
 	background('#000000');
 	windowwidth = 1536;
