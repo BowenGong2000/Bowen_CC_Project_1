@@ -3,11 +3,11 @@ class Movingobj{
 		this.x = windowwidth/2;
 		this.y = 400;
 		this.yspeed = 0.1;
-		this.sizeX = 10;
-		this.sizeY = 20;
-		this.addsizeX = 0.2;
+		this.sizeX = 30;
+		this.sizeY = 40;
+		this.addsizeX = 0.15;
 		this.addsizeY = 0.2;
-		this.accleration = 0.001;
+		this.accleration = 0.0005;
 		this.eyesize = 10;
 		this.addeyesize = 0.01;
 		this.eye_dist = 5;

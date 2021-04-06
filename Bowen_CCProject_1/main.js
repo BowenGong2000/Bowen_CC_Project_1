@@ -25,7 +25,7 @@ var face;
 
 
 function setup() {
-	window.print("Click mouse to control the window, wait and see what happen,close and reopen the window to reset the scene");
+	window.print("Click mouse to control the window, wait and see what happen,close the window to hide from the ghost");
 	createCanvas(1536,714);
 	background('#000000');
 	windowwidth = 1536;
@@ -111,7 +111,7 @@ function draw_close_window(){
 	stroke('#191970');
 	line(windowwidth/2,35,windowwidth/2,678);
 	rect(windowwidth/2,windowheight/2,650,650,3);
-	face.reset();
+	//face.reset();
 	fill(0,0,0,100);
 	rect(windowwidth/2,windowheight/2,650,650,3); 
 }// end of draw_close_window()
@@ -183,7 +183,7 @@ function draw_open_window(){
 
 function lightning(){
 	//if(!stop){
-		fill(r,g,b,70);
+		fill(r,g,b,100);
 		rectMode(CENTER);
 		rect(windowwidth/2,windowheight/2,650,650)
 	//}
